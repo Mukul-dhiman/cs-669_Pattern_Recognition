@@ -5,10 +5,10 @@ from matplotlib import cm
 import math
 
 #read class1 data
-data_class1 = open("../linearly_seperable_data/Class1.txt",'r')
+data_class1 = open("../non_linearly_seperable_data/Class1.txt",'r')
 
 #read class2 data
-data_class2 = open("../linearly_seperable_data/Class2.txt",'r')
+data_class2 = open("../non_linearly_seperable_data/Class2.txt",'r')
 
 
 # List of class1 and class2 data 
