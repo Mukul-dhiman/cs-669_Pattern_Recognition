@@ -190,6 +190,6 @@ pt.show()
 
 
 
-print("accuracy:",m.accuracy(data_class1_list_70_per,1,data_class2_list_70_per,2))
+print("accuracy:",m.accuracy(data_class1_list_30_per,1,data_class2_list_30_per,2))
 
 
