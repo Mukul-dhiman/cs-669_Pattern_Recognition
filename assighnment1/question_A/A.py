@@ -1,7 +1,6 @@
 
 import numpy as np
 import matplotlib.pyplot as pt
-from matplotlib import cm
 import math
 
 #read class1 data
@@ -61,8 +60,8 @@ data_class2_list_70_per = data_class2_list[:700]
 
 
 
-data_class1_list_30_per = data_class1_list[700:]
-data_class2_list_30_per = data_class2_list[700:]
+data_class1_list_30_per = data_class1_list[:700]
+data_class2_list_30_per = data_class2_list[:700]
 
 
 
@@ -158,38 +157,29 @@ fig = pt.figure()
 z = scale1(x_d,y_d)
 ax = pt.axes(projection ="3d")
 ax.scatter(x_d, y_d, z, c='r', marker='o')
-'''
-contour = pt.tricontourf(x_d, y_d, z, cmap="YlGnBu_r")
-fig.colorbar(contour)
-'''
 pt.show()
 
 z = scale2(x_d,y_d)
 ax = pt.axes(projection ="3d")
 ax.scatter(x_d, y_d, z, c='g', marker='^')
-'''
-contour = pt.tricontourf(x_d, y_d, z, cmap="YlGnBu_r")
-fig.colorbar(contour)
-'''
-pt.show()
-
-'''
-ax = fig.add_subplot(projection='3d')
-
-z = scale1(x_d,y_d)
-ax.scatter(x_d, y_d, z, c='r', marker='o')
-
-z = scale2(x_d,y_d)
-ax.scatter(x_d, y_d, z, c='g', marker='^')
-'''
-
-
 pt.show()
 
 
 
+while(1):
+    print("enter E to exit or C to continue")
+    chose=input()
+    if(chose=='C'):
+        print("enter value of x for prediction")
+        x=int(input())
+        print("enter value of y for prediction")
+        y=int(input())
+        print("point (x,y) belong to class",m.predict(x,y))
+    else:
+        break
 
 
-print("accuracy:",m.accuracy(data_class1_list_70_per,1,data_class2_list_70_per,2))
+
+print("accuracy:",m.accuracy(data_class1_list_30_per,1,data_class2_list_30_per,2))
 
 

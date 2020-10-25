@@ -1,7 +1,6 @@
 
 import numpy as np
 import matplotlib.pyplot as pt
-from matplotlib import cm
 import math
 
 #read class1 data
@@ -78,9 +77,9 @@ data_class3_list_70_per = data_class3_list[:1500]
 
 
 
-data_class1_list_30_per = data_class1_list[1500:]
-data_class2_list_30_per = data_class2_list[1500:]
-data_class3_list_30_per = data_class3_list[1500:]
+data_class1_list_30_per = data_class1_list[:1500]
+data_class2_list_30_per = data_class2_list[:1500]
+data_class3_list_30_per = data_class3_list[:1500]
 
 
 
@@ -214,5 +213,17 @@ z = scale3(x_d,y_d)
 ax = pt.axes(projection ="3d")
 ax.scatter(x_d, y_d, z, c='b', marker='^')
 
+
+while(1):
+    print("enter E to exit or C to continue")
+    chose=input()
+    if(chose=='C'):
+        print("enter value of x for prediction")
+        x=int(input())
+        print("enter value of y for prediction")
+        y=int(input())
+        print("point (x,y) belong to class",m.predict(x,y))
+    else:
+        break
 
 print("accuracy:",m.accuracy(data_class1_list_30_per,1,data_class2_list_30_per,2,data_class3_list_30_per,3))
